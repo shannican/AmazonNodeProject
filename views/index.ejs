@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <div id="main">
+    <div id="img">
+      <img src="../images/amazonlogo-removebg-preview.png" alt="">
+      <h6>.in</h6>
+    </div>
+    <div id="container">
+      <h1>Sign in</h1>
+      <form id="form" action="/login" method="post">
+        <!-- <label for="">Name</label>
+        <input type="text" name="name" placeholder="Name"> -->
+
+        <label for="">Email or Mobile Number</label>
+        <input type="email" name="email" placeholder="Email or Mobile Number">
+
+        <!-- <label for="">Age</label>
+        <input type="text" name="age" placeholder="Age"> -->
+
+        <label for="">Password</label>
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="Sign in">
+        <h4>By continuing, you agree to Amazon's <a href="/condition">Conditions of Use</a> and <a href="#">Privacy Notice.</a></h4>
+
+        <div id="btn">
+          <i id="icon" class="ri-arrow-right-s-fill"></i><h3>Need help?</h3>
+          <i id="icon-arrow" class="ri-arrow-down-s-fill"></i>
+        </div>
+        <a class="txt txt1" href="#">Forgot Password</a>
+        <a class="txt txt2" href="#">Other issue with Sign-In</a>
+     </form>
+     
+    </div>
+    
+    <div id="newUser">
+      <div id="newAmazon">
+        <div class="line"></div>
+        <h6>New to Amazon?</h6>
+        <div class="line"></div>
+      </div>
+      <a id="registerRoute" href="/register">Create your Amazon account</a>
+    </div>
+
+    <div id="down">
+      <div id="condition">
+        <a href="/condition">Conditions of Use</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Help</a>
+      </div>
+      <h5>© 1996-2022, Amazon.com, Inc. or its affiliates</h5>
+    </div>
+  </div>
+
+    <script src="../javascripts/login.js"></script>
+</body>
+</html>

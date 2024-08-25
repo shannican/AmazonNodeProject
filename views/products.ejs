@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/products.css">
+    <link rel="stylesheet" href="../stylesheets/navbar.css">
+</head>
+<body>
+
+  <!-- <div style="z-index:1000000;" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Products</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <%= JSON.stringify(data.products)%>
+          <form action="/edit/product/<%= data._id %>" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="" class="col-form-label">Product Name:</label>
+              <input type="text" name="productname" placeholder="<%=data.productname %>" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Address Name:</label>
+              <input type="text" name="address" placeholder="<%=data.address %>"  class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Description:</label>
+              <input type="text" name="desc" placeholder="<%=data.desc %>" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Price:</label>
+              <input type="text" name="price" placeholder="<%= data.price %>" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Discount:</label>
+              <input type="text" name="discount" placeholder="<%=data.discount %>" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Product Image </label>
+              <input type="file" name="pic" placeholder="<%=data.pic %>" class="form-control" id="formFile">
+            </div>
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Product Image </label>
+              <input type="file" name="pic" placeholder="<%= data.pic %>" class="form-control" id="formFile" >
+            </div>
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Product Image </label>
+              <input class="form-control" name="pic" type="file" id="formFile">
+            </div>
+            <div class="mb-3">
+              <label for="formFile" class="form-label">Product Image </label>
+              <input class="form-control" name="pic" type="file" id="formFile">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">edit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    <div id="main-box">
+          <%- include('./partials/navbar.ejs'); -%>
+          <h1>All products</h1>           
+          <div id="container" class="d-flex">
+            <% data.products.reverse().forEach(function(elem){ %>
+              <div class="card ms-4 mt-4" style="width: 17rem; min-height:72vh; padding:0% 0px;overflow:hidden;">
+                <div id="pdimage" class="card-img-top">
+                  <a id="whishlist" href="/wishlist/product/<%= elem._id %>"><i class="ri-bookmark-line"></i></a>
+                  <img id="img1"  src="/images/uploads/productImageUpload/<%= elem.pic[0] %>" class="card-img-top" alt="<%= elem.pic %>">
+                  <img  id="img2" src="/images/uploads/productImageUpload/<%= elem.pic[1] %>" class="card-img-top" alt="<%= elem.pic %>">
+                  <img id="img3" src="/images/uploads/productImageUpload/<%= elem.pic[2] %>" class="card-img-top" alt="<%= elem.pic %>">
+                  <img id="img4" src="/images/uploads/productImageUpload/<%= elem.pic[3] %>" class="card-img-top" alt="<%= elem.pic %>">
+                </div>
+                <div class="card-body products-card" style="width:100%;min-height:30vh; overflow: hidden;white-space:pre-wrap; text-align:center">
+                  <h5 class="card-title ms-1" style="font-weight: 800; text-transform: capitalize;"><%= elem.productname %></h5>
+                  <h6 id="address" class="card-title ms-1" style="text-transform: capitalize;"><%= elem.address %></h6>
+                  <div id="decsp" style="white-space:pre-wrap; text-align:center; text-transform: capitalize;"><p class="card-text"><%= elem.desc %></p></div>
+                  <div id="price" class="d-flex justify-content-between">
+                    <p class="card-text"><span style="font-weight:bold;text-transform: capitalize;">Price:-</span><%= elem.price %></p>
+                    <p class="card-text"><span style="font-weight:bold;text-transform: capitalize;">Discount:-</span><%= elem.discount %></p>
+                  </div>
+                  <div id="btn" class="d-flex justify-content-between">
+                    <a style="display: flex;justify-content:center; align-items:center; padding-bottom:5px;font-size:15px; font-weight:500" href="/editproduct/<%= elem._id %>" class="btn btn-success">Edit</a>
+
+                    <div id="pin" class="btn btn-info" title="Add Pin"><i class="ri-pushpin-line"></i></div>
+
+                    <a id="cart" href="/mart" title="Add Cart" class="btn btn-primary"><i class="ri-shopping-cart-2-line"></i></a>
+
+                    <!-- <div id="cart" class="btn btn-primary" title="Add Cart"><i class="ri-shopping-cart-2-line"></i></div> -->
+
+                    <a style="display: flex;justify-content:center; align-items:center; padding-bottom:5px;font-size:22px" id="delete" class="btn btn-danger" title="Delete" href="/delete/product/<%= elem._id %>"><i class="ri-delete-bin-line"></i></a>
+                  </div>
+                </div>
+              </div>
+            <% }) %>             
+          </div>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<!-- <script src="../javascripts/home.js"></script> -->
+<script src="../javascripts/navbar.js"></script>
+<script src="../javascripts/products.js"></script>
+</body>
+</html>

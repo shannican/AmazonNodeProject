@@ -1,0 +1,302 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0% 80px;
+    /* background-color: rgba(240, 226, 240, 0.929); */
+    background-color: rgb(209, 233, 255);
+}
+#left{
+    position: relative;
+    top: 7.5%;
+    width: 23%;
+    height: 60%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#left h1{
+    position: relative;
+    font-size: 25px;
+    font-family: "Gilroy";
+    margin-top: 13px;
+    cursor: pointer;
+}
+#photu{
+    position: relative;
+    width: 110px;
+    height: 108px;
+    border: 1px solid black;
+    border-radius: 65px;
+    overflow: hidden;
+}
+#photu img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+#left button{
+    position: relative;
+    font-size: 10px;
+    padding: 6px 17px;
+    font-family: "Aeonik";
+    font-weight: 500;
+    background-color: tomato;
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    margin-top: 10px;
+}
+#left h2{
+    font-size: 20px;
+    font-family: "Aeonik";
+    margin-top: 7px;
+    position: relative;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+#left h4{
+    position: relative;
+}
+.text{
+    position: relative;
+    width: 80%;
+    height: 7%;
+    /* background-color: red; */
+    font-size: 18px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    /* border-bottom: 0.1px solid tomato; */
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+.text h4{
+    font-size: 15px;
+    font-family: "Aeonik";
+    font-weight: 400;
+    text-decoration:underline;
+    color: #f3701e;
+    margin-top: 6px;
+    cursor:text;
+}
+
+#left h3{
+    font-size: 18px;
+    font-family: "Aeonik";
+    margin-top: -7px;
+    position: relative;
+    color: rgba(33, 33, 33, 0.71);
+    cursor: pointer;
+    text-transform: capitalize;
+}
+#left p{
+    /* margin-top: 50px; */
+    font-size: 12px;
+    margin-bottom: -9px;
+    cursor: pointer;
+}
+#left p span{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: -12px;
+    cursor: text;
+}
+#logoutbtn{
+    position: absolute;
+    right: 2%;
+    top: 2%;
+}
+#logoutbtn button{
+    padding:3px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Aeonik";
+    border: 1px solid tomato;
+}
+#logoutbtn button:hover{
+    background-color: tomato;
+    color: #fff;
+}
+#right{
+    position: relative;
+    top: 7.5%;
+    width: 60%;
+    height: 85%;
+    background-color: #fff;
+    padding: 0% 20px;
+    /* background-color: blue; */
+}
+#right h1{
+    font-size: 30px;
+    font-family: "Aeonik";
+    color: black;
+    display: flex;
+    left: 37%;
+    justify-content: center;
+    font-weight: 400;
+    opacity: .8;
+    position: absolute;
+    margin-top: 15px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#right #container{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#right #container #user-info{
+    position: relative;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+}
+#right #container #user-info form{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    position: relative;
+    width: 80%;
+    top: -2%;
+}
+#right #container #user-info form input{
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 1px;
+    padding: 5px 5px;
+    font-size: 12px;
+    border: 0.5px solid  #e7951b;
+    caret-color: red;
+    caret-shape: 0.5px;
+}
+form input[type="text"]:focus {
+    box-shadow: 0px 0px 5px 0px #e7951b;
+    border-color: #e7951b;
+    outline: none;
+    border: 0.7px solid rgba(42, 134, 232, 0.687);
+}
+form input[type="email"]:focus {
+    box-shadow: 0px 0px 5px 0px #e7951b;
+    border-color: #e7951b;
+    outline: none;
+    border: 0.7px solid rgba(42, 134, 232, 0.687);
+}
+label{
+    margin-top: 8px;
+}
+#submit-btn{
+    position: absolute;
+    width: 90px !important;
+    top: 103%;
+    left: 15%;
+    height: 30px;
+}
+#submit-btn:hover{
+    background-color: tomato;
+    color: #fff;
+}
+#reset-btn{
+    position: absolute;
+    width: 90px !important;
+    top: 103%;
+    left: 55%;
+    height: 30px;
+}
+#reset-btn:hover{
+    background-color: tomato;
+    color: #fff;
+}
+#right h4{
+    position: relative;
+    font-size: 20px;
+    font-family: "Aeonik";
+    text-decoration: underline;
+    cursor: pointer;
+    /* left: 25%; */
+}
+#right #container #line{
+    position: relative;
+    width: 1px;
+    height: 100%;
+    background-color: black;
+    opacity: .3;
+}
+#right #container #change-password{
+    position: relative;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    /* background-color: blue; */
+}
+#right #container #change-password form{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    position: relative;
+    width: 80%;
+    top: -2%;
+}
+#right #container #change-password form input{
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 1px;
+    padding: 5px 5px;
+    font-size: 12px;
+    border: 0.5px solid  #e7951b;
+    caret-color: red;
+    caret-shape: 0.5px;
+}
+#change-password form input[type="password"]:focus {
+    box-shadow: 0px 0px 5px 0px #e7951b;
+    border-color: #e7951b;
+    outline: none;
+    border: 0.7px solid rgba(42, 134, 232, 0.687);
+}
+#change-password label{
+    margin-top: 8px;
+}
+#change-password #submit-btn{
+    position: absolute;
+    width: 90px !important;
+    top: 108%;
+    left: 15%;
+    height: 30px;
+}
+#change-password #submit-btn:hover{
+    background-color: tomato;
+    color: #fff;
+}
+#change-password #reset-btn{
+    position: absolute;
+    width: 90px !important;
+    top: 108%;
+    left: 55%;
+    height: 30px;
+}
+#change-password #reset-btn:hover{
+    background-color: tomato;
+    color: #fff;
+}

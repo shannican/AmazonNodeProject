@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#main-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(233, 233, 233);
+}
+#post-box{
+    position: relative;
+    width: 50%;
+    height: 70%;
+    background-color: white;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#form{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px;
+}
+#img-box{
+    position: relative;
+    width: 35%;
+    height: 80%;
+    background-color: #ededed;
+    border-radius: 10px;
+}
+#product-image{
+    position: relative;
+    width: 94%;
+    height: 80%;
+    border: 2px dashed rgb(163, 163, 163);
+    margin-left: 8px;
+    margin-top: 8px;
+    border-radius: 10px;
+}
+.text{
+    position: relative;
+    font-family: "Aeonik";
+    align-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1px;
+    color: rgb(101, 101, 101);
+}
+#product-image>#icon{
+    position: relative;
+    top: 23%;
+    left: 43%;
+    font-size: 35px;
+    color: rgb(79, 79, 79);
+}
+#img-info{
+    font-family: "Aeonik";
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    font-weight: 400;
+    top: 23%;
+}
+.txt1{
+    margin-top: 5px;
+}
+#content-box{
+    position: relative;
+    width: 55%;
+    height: 80%;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: column;
+    padding: 17px 12px;
+}
+#content-box input[type=text]{
+    padding: 10px;
+    font-size: 25px;
+    margin-top: 12px;
+    font-family: "Aeonik";
+    border-bottom: 0.4px solid rgba(0, 0, 0, 0.329);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align:justify;
+    background: none;
+    outline: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+#content-box input[type=submit]{
+    width: 100px;
+    height: 35px;
+    font-size: 20px;
+    justify-content: center;
+    border-radius: 20px;
+    font-family: "Aeonik";
+    margin-top: 30px;
+    margin-left: 70%;
+    display: flex;
+    align-items: center;
+    background-color:rgb(185, 14, 219);
+    border: none;
+    padding-bottom: 4px;
+    color: rgba(255, 255, 255, 0.893);
+    font-weight: 500;  
+}

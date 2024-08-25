@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+    <link rel="stylesheet" href="../stylesheets/navbar.css">
+  </head>
+  <body>
+    <div id="main">
+
+        <div style="z-index: 9999999;" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Create Products</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="/create/products" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Product Name:</label>
+                      <input type="text" name="productname" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Address Name:</label>
+                      <input type="text" name="address" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Description:</label>
+                      <input type="text" name="desc" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Price:</label>
+                      <input type="text" name="price" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Discount:</label>
+                      <input type="text" name="discount" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Product Image </label>
+                      <input class="form-control" name="pic" type="file" id="formFile">
+                    </div>
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Product Image </label>
+                      <input class="form-control" name="pic" type="file" id="formFile">
+                    </div>
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Product Image </label>
+                      <input class="form-control" name="pic" type="file" id="formFile">
+                    </div>
+                    <div class="mb-3">
+                      <label for="formFile" class="form-label">Product Image </label>
+                      <input class="form-control" name="pic" type="file" id="formFile">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    <div id="nav-bar">
+      <div id="amazon-logo">
+        <div id="icon">
+          <img src="../images/AMZN-e9f942e4-removebg-preview.png" alt="">
+        </div>
+        <div id="amzn">
+          <img src="../images/amazon-logo-1024x683-removebg-preview.png" alt="">
+        </div>
+      </div>
+      <div id="search">
+        <input id="search-input" type="search" placeholder="Search">
+      </div>
+      <div id="route-link">
+        <a id="pins" href="/pins">Pins</a>
+        <!-- <a id="post" href="/post">Post</a> -->
+        <a id="whishlist" style="margin-top: 4px;" title="Whishlist" href="/whishlist"><i class="ri-bookmark-line"></i></a>
+        <a id="cart" style="margin-top: 4px;" title="cart" href="/cart"><i class="ri-shopping-cart-fill"></i></a>
+          <div id="profile-pic">
+            <img src="/images/uploads/userImageUpload/<%= data.dpimage %>" alt="">
+          </div>
+      </div>
+
+      <div id="option">
+        <i style="top: -17.7%;" class="ri-arrow-up-s-fill"></i>
+        <a href="/profile">Your Profile</a>
+        <a href="/products">All Products</a>
+        <a href="/cart">Cart</a>
+        <a href="/pins">All Pins</a>
+        <a href="/logout">Logout</a>
+      </div>
+    </div>
+    <% if(data.verify =='false'){ %>
+      <div id="verify">
+          <p>Your account is incomplete <a href="/verified">Verify your account</a> and complete your account... </p>
+          <a href="/verified">Verify</a>
+      </div>
+    <% } %>
+    <% if(data.verify =='true'){ %>
+      <h1 style="font-family: Aeonik; font-weight:400; font-size:22px; margin-top:20px;text-decoration:underline;">Verified Your Profile</h1>
+    <% } %>
+      <div id="pp-text">
+        <div id="photu">
+          <img id="pp" src="/images/uploads/userImageUpload/<%= data.dpimage %>" alt="...">
+          <form action="/upload" id="prof" method="post" enctype="multipart/form-data">
+              <input name="dpimage" type="file" class="form-control" id="pp-input" >
+              <input type="submit" value="submit">
+          </form>
+      </div>
+      <div id="text">
+          <h2><%= data.name %></h2>
+          <small><%= data.address %></small>
+          <div id="viewBtn">
+            <a href="/editprofile" class="btn btn-info">Edit Profile</a>
+          </div>
+        </div>
+      </div>
+      
+      <div id="button" style="margin-left: 70px;margin-top:20px;">
+        <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Create Products</button>
+
+        <a href="/products" class="btn btn-success">See All Products</a>
+        
+        <button type="button" class="btn btn-warning mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Delete Products</button>
+    </div>
+
+    <h1 id="recent-text">Recent Added Products</h1>
+    <div id="recentProduct">
+      <% data.products.slice(0,5).reverse().forEach(function(elemm){ %>
+        <div class="card ms-4 mt-4" style="width: 19rem; min-height:72vh; padding:0% 0px;overflow:hidden;">
+          <div id="pdimage" class="card-img-top" style="width:100%; height:23rem;">
+            <a id="whishlistt" href=""><i class="ri-bookmark-line"></i></a>
+            <img id="img1"  src="/images/uploads/productImageUpload/<%= elemm.pic[0] %>" class="card-img-top" alt="">
+            <img  id="img2" src="/images/uploads/productImageUpload/<%= elemm.pic[1] %>" class="card-img-top" alt="">
+            <img id="img3" src="/images/uploads/productImageUpload/<%= elemm.pic[2] %>" class="card-img-top" alt="">
+            <img id="img4" src="/images/uploads/productImageUpload/<%= elemm.pic[3] %>" class="card-img-top" alt="">
+          </div>
+          <div class="card-body products-card" style="width:100%;min-height:30vh; overflow: hidden;white-space:pre-wrap; text-align:center">
+            <h5 class="card-title ms-1" style="font-weight: 800;text-transform: capitalize;"><%= elemm.productname %></h5>
+            <h6 id="address" style="text-transform: capitalize;" class="card-title ms-1"><%= elemm.address %></h6>
+            <div id="decsp" style="white-space:pre-wrap; text-align:center;text-transform: capitalize;"><p class="card-text"><%= elemm.desc %></p></div>
+            <div id="price" class="d-flex justify-content-between">
+              <p class="card-text"><span style="font-weight:bold;text-transform: capitalize;">Price:-</span><%= elemm.price %></p>
+              <p class="card-text"><span style="font-weight:bold;text-transform: capitalize;">Discount:-</span><%= elemm.discount %></p>
+            </div>
+            <div id="btn" class="d-flex justify-content-between">
+              <a style="display: flex;justify-content:center; align-items:center; padding-bottom:5px;font-size:15px; font-weight:500" href="/edit/product/<%= elemm._id %>" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Edit</a>
+
+              <div id="pin" class="btn btn-info" title="Add Pin"><i class="ri-pushpin-line"></i></div>
+              <div id="cart" class="btn btn-primary" title="Add Cart"><i class="ri-shopping-cart-2-line"></i></div>
+              <a style="display: flex;justify-content:center; align-items:center; padding-bottom:5px;font-size:22px" id="delete" class="btn btn-danger" title="Delete" href="/delete/product/<%= elemm._id %>"><i class="ri-delete-bin-line"></i></a>
+            </div>
+          </div>
+        </div>
+      <% }) %>    
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+
+
+<script src="../javascripts/profile.js"></script>
+<script src="../javascripts/navbar.js"></script>
+</body>
+</html>

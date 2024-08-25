@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/register.css">
+</head>
+<body>
+    <div id="main">
+        <div id="left">
+            <img src="../images/photo-1522780550166-284a0288c8df-removebg-preview.png" alt="">
+        </div>
+        <div id="right">
+            <h2>Register</h2>
+            <h4>Manage all your lottery efficiently</h4>
+            <p>Let's you all set up so you can verify your personal account and brgin <br>setting up your profile.</p>
+            <form action="/register" method="post">
+                <div class="input">
+                    <label for="">First Name*</label>
+                    <input id="title" name="name" type="text">
+                    <div id="low1">
+                        <label for="title" id="ltitle">your first 20 character is what usually show up in the feeds</label>
+                        <label for="" id="titlecount">20</label>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="">Last Name</label>
+                    <input id="lastName-Tittle" type="text">
+                    <div id="low2">
+                        <label for="lastName-Tittle" id="tittle">your first 10 character is what usually show up in the feeds</label>
+                        <label for="" id="titlecount2">10</label>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="">Mobile Number*</label>
+                    <input id="mob-title" name="contact" type="text">
+                    <div id="low3">
+                        <label for="mob-title" id="numbertitle">fill only 10 digits number</label>
+                        <label for="" id="mob-titlecount">10</label>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="select">Choose One*</label>
+                    <select class="select" name="isSeller">
+                        <option selected>Choose One</option>
+                        <option value="1">Normal user</option>
+                        <option value="2">Seller</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <label for="">Email*</label>
+                    <input id="email-title" name="email" type="email">
+                    <div id="low4">
+                        <label for="email-title" id="emailtitle">Only accepted email</label>
+                    </div>
+                </div>
+                <div class="input">
+                    <label for="">New Password*</label>
+                    <input name="password" type="password">
+                </div>
+                <div id="checkbox">
+                    <input id="check" type="checkbox" name="check" value="form">
+                    <label style="margin-bottom: 4px; margin-left:20px;" for="checkbox">Yes, I want to recieve Lottery Display Emails</label>
+                </div>
+                <div id="checkbox" style="margin-top: -2px;">
+                    <input id="check" type="checkbox" name="check" value="form">
+                    <label style="margin-bottom: 9px; margin-left:20px;" for="checkbox">Yes, I agree to all The <a href="">Terms</a> and <a href="">Privacy Policy</a></label>
+                </div>
+                <input id="submit-btn" type="submit" value="Create Account">
+                <div id="signup">Already have an account? <a href="/login">Sign in</a></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../javascripts/register.js"></script>
+</body>
+</html>

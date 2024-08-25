@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/editproduct.css">
+</head>
+<body>
+    <div id="main">
+        <div id="left">
+            <div id="overlay">
+                <h1>AMAZON</h1>
+            </div>
+        </div>
+
+        <div id="right">
+            <h1>Edit Your Products</h1>
+            <form action="/editproduct/product/<%= data._id %>" id="form" method="post" enctype="multipart/form-data">
+                <div id="productname-input">
+                    <label for="productname">Product Name :-</label>
+                    <input type="text" name="productname" value="<%=data.productname %>">
+                </div>
+                <div id="productimage-input">
+                    <label for="pic">Product image 1</label>
+                    <input type="file" name="pic" value="<%= data.pic[0] %>" placeholder="<%= data.pic[0] %>">
+                </div>
+                <div id="addressname-input">
+                    <label for="address">Address Name :-</label>
+                    <input type="text" name="address" value="<%= data.address %>">
+                </div>
+                <div id="productimage-input">
+                    <label for="pic">Product image 2</label>
+                    <input type="file" name="pic">
+                </div>
+                <div id="desc-input">
+                    <label for="desc">Description :-</label>
+                    <input type="text" name="desc" value="<%= data.desc %>">
+                </div>
+                <div id="productimage-input">
+                    <label for="pic">Product image 3</label>
+                    <input type="file" name="pic">
+                </div>
+                <div id="price-input">
+                    <label for="price">Price :-</label>
+                    <input type="text" name="price" value="<%= data.price %>">
+                </div>
+                <div id="productimage-input">
+                    <label for="pic">Product image 4</label>
+                    <input type="file" name="pic">
+                </div>
+                <div id="discount-input">
+                    <label for="discount">Discount :-</label>
+                    <input type="text" name="discount" value="<%= data.discount %>">
+                </div>
+                <div id="checkbox">
+                    <input id="check" type="checkbox" name="check" value="form">
+                    <label style="margin-left: 10px; margin-bottom:3px;" for="checkbox">Agree, your all filled information is correct</label>
+                </div>
+                <div id="reset-input">
+                </div>
+                <div id="submit-input">
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
